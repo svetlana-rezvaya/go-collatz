@@ -1,9 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"flag"
+	"fmt"
+)
 
 func main() {
-	n := 23
+	nFlag := flag.Int("n", 23, "start number")
+	flag.Parse()
+
+	n := *nFlag
 	fmt.Println(n)
 
 	for n != 1 {
